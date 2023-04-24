@@ -9,7 +9,7 @@ const routerUsers = require('./routes/users');
 
 app.use(express.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/aroundb');
+mongoose.connect('mongodb://localhost:27017/aroundb');
 app.use((req, res, next) => {
   req.user = { _id: '6445fd3da94cf177f57a7da7' };
   next();
