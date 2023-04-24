@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 
 const { PORT = 3000 } = process.env;
 const app = express();
+const routerCards = require('./routes/cards');
+const routerUsers = require('./routes/users');
+
 
 app.use(express.json());
 
@@ -12,8 +15,6 @@ app.use((req, res, next) => {
   next();
 });
 
-const routerCards = require('./routes/cards');
-const routerUsers = require('./routes/users');
 
 app.use(routerCards);
 app.use(routerUsers);
